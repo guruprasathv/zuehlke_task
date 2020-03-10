@@ -1,4 +1,4 @@
-package pageObjects;
+package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,14 +22,24 @@ public class LoginPage {
     public static WebElement password;
     
     @FindBy(how=How.ID, using="SubmitLogin")
-    public static WebElement signin_button;
+    public static WebElement signinButton;
     
     @FindBy(how=How.CSS, using=".alert-danger li")
-    public static WebElement error_message;
+    public static WebElement errorMessage;
     
     @FindBy(how=How.CSS, using=".page-heading")
-    public static WebElement page_header;
+    public static WebElement pageHeader;
     
+    @FindBy(how=How.CSS, using="[title='Recover your forgotten password']")
+    public static WebElement forgotPassword;
+    
+    @FindBy(how=How.ID, using="SubmitCreate")
+    public static WebElement signupButton;
+  
+  //Click the signup button
+    public void clickSignUp(){
+    	signupButton.click();     
+    }
     
   //Set user name in email address textbox
     public void setUserName(String strUserName){
@@ -53,17 +63,12 @@ public class LoginPage {
     
   //Click on login button
     public void clickLogin(){
-    	signin_button.click();
+    	signinButton.click();
     } 
     
   //Check the error message
     public String checkErrorMessage(){
-    	return error_message.getText();
-    } 
-   
-  //Check the error message
-    public String pageHeader(){
-    	return page_header.getText();
+    	return errorMessage.getText();
     } 
     
   //Login method

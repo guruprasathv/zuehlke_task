@@ -1,6 +1,7 @@
-package pageObjects;
+package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,54 +20,60 @@ WebDriver driver;
     public static WebElement email;
     
     @FindBy(how=How.CSS, using=".ajax_cart_no_product")
-    public static WebElement empty_cart;
+    public static WebElement emptyCart;
     
     @FindBy(how=How.ID, using="search_query_top")
-    public static WebElement search_field;
+    public static WebElement searchField;
     
     @FindBy(how=How.NAME, using="submit_search")
-    public static WebElement search_submit;
+    public static WebElement searchSubmit;
     
     @FindBy(how=How.NAME, using="Submit")
-    public static WebElement add_to_cart;
+    public static WebElement addToCart;
     
     @FindBy(how=How.CSS, using=".cart_description .product-name")
-    public static WebElement product_name;
+    public static WebElement productName;
+    
+    @FindBy(how=How.CSS, using=".product-name .a")
+    public static WebElement productNameInCart;
     
     @FindBy(how=How.CSS, using="[title='Proceed to checkout']")
     public static WebElement checkout;
     
     @FindBy(how=How.CSS, using=".product-image-container")
-    public static WebElement product_container;
+    public static WebElement productContainer;
+    
+    @FindBy(how=How.CSS, using=".cart_item")
+    public static WebElement cartItem;
     
   //Check the message in the cart
     public String checkCartMessage(){
-    	return empty_cart.getText();
+    	return emptyCart.getText();
     } 
     
   //Submit the search value
     public void searchSubmit(){
-    	search_submit.click();
+    	searchSubmit.click();
     } 
     
   //Clear the search field
     public void clearSearchField(){
-    	search_field.clear();
+    	searchField.clear();
     } 
     
   //Set value to the search field
     public void setSearchValue(String searchTerm){
-    	search_field.sendKeys(searchTerm);     
+    	searchField.sendKeys(searchTerm);     
     }
     
   //Add to cart button
     public void addToCart(){
-    	add_to_cart.click();     
+    	addToCart.click();     
     }
     
   //Find product name
     public String findProductName(){
-    	return product_name.getText();     
+    	return productName.getText();     
     }
     
   //Proceed to checkout

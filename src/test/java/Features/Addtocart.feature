@@ -5,8 +5,9 @@ Feature: Add a product to the cart
     Given User navigates to the home view
     Then Cart is empty
     
-  Scenario: Add a product to the cart
+  Scenario: Add a product to the cart as non-login user
     When Search for a product
     And User navigates to the product page
     And Add the product to the cart
     Then Product successfully added to the cart
+  

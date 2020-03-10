@@ -1,14 +1,18 @@
-package seleniumgluecode;
+package Steps;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.*;
-import pageObjects.HomePage;
-import pageObjects.AddtocartPage;
+import PageObjects.HomePage;
+import PageObjects.LoginPage;
+import PageObjects.AddtocartPage;
+import PageObjects.SignupPage;
+import Utils.Utils;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.After;
 import org.junit.Assert;
 
 public class AddtocartTest {

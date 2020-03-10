@@ -1,4 +1,4 @@
-package pageObjects;
+package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +17,7 @@ public class HomePage {
 	private static String HOME_PAGE="http://automationpractice.com/index.php";
 	
 	@FindBy(linkText = "Sign in")
-    public WebElement sign_in;
+    public WebElement signIn;
 	
 	//Open the homepage method
     public void load(){
@@ -26,6 +26,6 @@ public class HomePage {
     
   //Navigate to signInpage
     public void navigateToSignIn(){
-    	sign_in.click();
+    	signIn.click();
     } 
 }
